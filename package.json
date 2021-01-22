@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-minimal",
+  "name": "gatsby-todo-app",
   "version": "1.0.0",
   "private": true,
   "description": "A Gatsby starter for running recipes and adding themes. It does not come with any pages.",
-  "author": "Laurie Barth",
+  "author": "sshahid",
   "keywords": [
     "gatsby"
   ],
