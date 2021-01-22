@@ -16,7 +16,14 @@ const faunadb = require('faunadb'),
   `;
 
 const Home = () => {
-  
+    const { loading, error, data } = useQuery(GET_AUTHOR);
+    if (loading)
+        return <h2>Loading..</h2>
+
+    if (error)
+        return <h2>Error</h2>
+
+    console.log(data)  
 
     return (
         <div className="container">
