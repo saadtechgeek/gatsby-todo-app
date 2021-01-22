@@ -2,37 +2,26 @@ const { ApolloServer, gql } = require('apollo-server-lambda')
 
 const typeDefs = gql`
   type Query {
-    hello: String
-    allAuthors: [Author!]
-    author(id: Int!): Author
-    authorByName(name: String!): Author
+    allTodo: [TODO!]
   }
-  type Author {
+  type TODO {
     id: ID!
     name: String!
-    married: Boolean!
+    completed: Boolean!
   }
 `
 
-const authors = [
-  { id: 1, name: 'Terry Pratchett', married: false },
-  { id: 2, name: 'Stephen King', married: true },
-  { id: 3, name: 'JK Rowling', married: false },
+const todo = [
+  { id: 1, name: 'Task 1', completed: false },
+  { id: 2, name: 'Task 2', completed: true },
+  { id: 3, name: 'Task 3', completed: false },
 ]
 
 const resolvers = {
   Query: {
-    hello: () => {
-      return 'Hello, world!'
-    },
-    allAuthors: () => {
-      return authors
-    },
-    author: () => {},
-    authorByName: (root, args) => {
-      console.log('hihhihi', args.name)
-      return authors.find(x => x.name === args.name) || 'NOTFOUND'
-    },
+    allTodo: () => {
+      return todo
+    }
   },
 }
 

@@ -5,18 +5,18 @@ import "./styles.css";
 const faunadb = require('faunadb'),
   q = faunadb.query;
 
-  const GET_AUTHOR = gql`
+  const GET_ALL_TODO = gql`
   {
-    allAuthors {
+    allTodo {
           id
           name
-          married
+          completed
       }
   }
   `;
 
 const Home = () => {
-    const { loading, error, data } = useQuery(GET_AUTHOR);
+    const { loading, error, data } = useQuery(GET_ALL_TODO);
     if (loading)
         return <h2>Loading..</h2>
 
