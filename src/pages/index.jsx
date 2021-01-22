@@ -5,6 +5,16 @@ import "./styles.css";
 const faunadb = require('faunadb'),
   q = faunadb.query;
 
+  const GET_AUTHOR = gql`
+  {
+    allAuthors {
+          id
+          name
+          married
+      }
+  }
+  `;
+
 const Home = () => {
   
 
