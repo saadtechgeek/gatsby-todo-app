@@ -1,10 +1,8 @@
 {
-  "name": "vcard",
+  "name": "functions",
   "version": "1.0.0",
   "description": "",
-  "main": "vCard.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
